@@ -119,9 +119,11 @@
 
             e.preventDefault();
             cash(editorFrame).css({
-                left: `${e.pageX - editorDragDifference.x}px`,
-                top: `${e.pageY - editorDragDifference.y}px`
+                left: `${e.x - editorDragDifference.x}px`,
+                top: `${e.y - editorDragDifference.y}px`
             });
+
+            cash(editorFrame).css('top');
         });
     });
 
@@ -135,10 +137,11 @@
     };
 
     const startDragging = (e: MouseEvent) => {
-        const editorPosition = cash(editorFrame).offset();
+        const editorFrameCash = cash(editorFrame);
+
         editorDragDifference = {
-            x: e.pageX - editorPosition.left,
-            y: e.pageY - editorPosition.top
+            x: e.x - parseInt(editorFrameCash.css('left')),
+            y: e.y - parseInt(editorFrameCash.css('top'))
         };
     };
 
@@ -165,7 +168,7 @@
     });
 
     const editorVariants = tv({
-        base: 'fixed top-0 left-0 w-full h-[550px] p-[25px] flex flex-col gap-4 drop-shadow-lg max-w-4xl opacity-75 hover:opacity-100 transition-opacity duration-150 ease-in-out',
+        base: 'fixed w-full h-[550px] flex flex-col gap-4 drop-shadow-lg max-w-4xl opacity-75 hover:opacity-100 transition-opacity duration-150 ease-in-out',
         variants: {
             hidden: {
                 true: 'hidden'
