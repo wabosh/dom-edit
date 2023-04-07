@@ -28,6 +28,8 @@
 </script>
 
 <script lang="ts">
+    import { tv } from 'tailwind-variants';
+
     let active = false;
 
     const selectableElements = cash('body *').not('plasmo-csui').not('#edit-picker');
@@ -56,10 +58,33 @@
         }
         active = !active;
     };
+
+    const toggleVariant = tv({
+        base: 'w-8 h-4 rounded-full relative block transition-all duration-75 ease-in-out',
+        variants: {
+            active: {
+                true: 'bg-green-800',
+                false: 'bg-red-800'
+            }
+        }
+    });
+
+    const innerToggleVariant = tv({
+        base: 'rounded-full h-4 w-4 bg-white transition-transform duration-75 ease-out',
+        variants: {
+            active: {
+                false: 'translate-x-0',
+                true: 'translate-x-4'
+            }
+        }
+    });
 </script>
 
 <div
-    class="fixed bottom-4 left-1/2 items-center leading-none -translate-x-1/2 p-4 bg-gray-900 text-white rounded shadow-lg flex gap-4 z-50">
-    <h1>HTML Edit</h1>
-    <button class="p-2 border rounded" on:click={toggleEdit}>Edit</button>
+    class="fixed bottom-4 left-4 items-center leading-none p-2 bg-gray-900 text-white rounded shadow-lg flex gap-4 z-50 text-sm opacity-50 hover:opacity-100 transition-opacity ease-in-out duration-150">
+    <h1 class="select-none">DOM Edit</h1>
+
+    <button class={toggleVariant({ active: active })} on:click={toggleEdit}>
+        <div class={innerToggleVariant({ active: active })} />
+    </button>
 </div>

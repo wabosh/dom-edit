@@ -1,41 +1,41 @@
 {
-  "name": "html-edit",
-  "displayName": "Html edit",
-  "version": "0.0.1",
-  "description": "An inline HTML Editor. Choose an element and add your own code.",
-  "author": "Sven Fehlmann",
-  "scripts": {
-    "dev": "plasmo dev",
-    "build": "plasmo build",
-    "package": "plasmo package"
-  },
-  "dependencies": {
-    "ace-builds": "^1.16.0",
-    "cash-dom": "^8.1.4",
-    "js-beautify": "^1.14.7",
-    "plasmo": "0.67.4",
-    "svelte": "^3.58.0",
-    "svelte-ace": "^1.0.21",
-    "svelte-preprocess": "^5.0.3",
-    "tailwind-variants": "^0.1.2"
-  },
-  "devDependencies": {
-    "@plasmohq/prettier-plugin-sort-imports": "3.6.3",
-    "@types/chrome": "0.0.228",
-    "@types/js-beautify": "^1.13.3",
-    "@types/node": "18.15.11",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
-    "prettier": "2.8.7",
-    "prettier-plugin-svelte": "^2.10.0",
-    "prettier-plugin-tailwindcss": "^0.2.7",
-    "tailwindcss": "^3.3.1",
-    "typescript": "5.0.3"
-  },
-  "manifest": {
-    "host_permissions": [
-      "https://*/*",
-      "http://*/*"
-    ]
-  }
+    "name": "html-edit",
+    "displayName": "Html edit",
+    "version": "0.0.2",
+    "description": "An inline HTML Editor. Choose an element and add your own code.",
+    "author": "Sven Fehlmann",
+    "scripts": {
+        "dev": "plasmo dev",
+        "build": "plasmo build",
+        "package": "plasmo package"
+    },
+    "dependencies": {
+        "ace-builds": "^1.16.0",
+        "cash-dom": "^8.1.4",
+        "js-beautify": "^1.14.7",
+        "plasmo": "0.67.4",
+        "svelte": "^3.58.0",
+        "svelte-ace": "^1.0.21",
+        "svelte-preprocess": "^5.0.3",
+        "tailwind-variants": "^0.1.2"
+    },
+    "devDependencies": {
+        "@plasmohq/prettier-plugin-sort-imports": "3.6.3",
+        "@types/chrome": "0.0.228",
+        "@types/js-beautify": "^1.13.3",
+        "@types/node": "18.15.11",
+        "autoprefixer": "^10.4.14",
+        "postcss": "^8.4.21",
+        "prettier": "2.8.7",
+        "prettier-plugin-svelte": "^2.10.0",
+        "prettier-plugin-tailwindcss": "^0.2.7",
+        "tailwindcss": "^3.3.1",
+        "typescript": "5.0.3"
+    },
+    "manifest": {
+        "host_permissions": [
+            "https://*/*",
+            "http://*/*"
+        ]
+    }
 }

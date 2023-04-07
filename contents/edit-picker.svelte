@@ -141,12 +141,6 @@
 
 <!-- Picker -->
 {#if focussedElement === undefined}
-    <div
-        class="fixed top-4 left-1/2 items-center z-50 leading-none -translate-x-1/2 p-4 bg-gray-50 rounded shadow-lg flex gap-4">
-        <div class="h-1 w-1 bg-red-500 rounded-full" />
-        <h1>Active</h1>
-    </div>
-
     <!-- Main focus indicator -->
     <div
         class={focusIndicator({ hidden: focussedElement !== undefined })}
